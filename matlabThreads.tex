@@ -87,14 +87,14 @@ $\sigma, \; r, \; b$ - положительные параметры.
 \end{figure}
 \begin{figure}[H]
 	\center{\includegraphics[scale=0.7]{LorenzLL13}}
-	\caption{Кривая бифуркации вилка}
+	\caption{Кривая бифуркации гомоклинической восьмёрки бабочки}
 \end{figure}
-Построим кривую $l_3$.
+Построим кривую $l_3$ бифуркации Андронова-Хопфа.
 \newline
 В Starter выберем момент времени $t=0$ и точку $(x,y,z) = (0.001, 0, 0)$. Параметры - $(\sigma, r, b) = (10, 2, \frac{2}{3})$ Найдём состояние равновесия и затем выберем эту точку как состояние равновесия: $\textbf{Type|Initial Point|Equilibrium}$. Протянем её по параметру $r$, пока не найдём точку Hopf. Выберем её в Initializer, выберем пункт Hopf (init\_H\_H), затем, протянув по двум параметрам $(\sigma, r)$, получим кривую $l_3$.
 \begin{figure}[H]
 	\center{\includegraphics[scale=0.8]{lorenzl2}}
-	\caption{Кривая бифуркации вилка}
+	\caption{Кривая бифуркации Андронова-Хопфа}
 \end{figure}
 Построим кривую симметричной бифуркации вилки.
 \newline
@@ -103,4 +103,49 @@ $\sigma, \; r, \; b$ - положительные параметры.
 	\center{\includegraphics[scale=0.8]{LorenzLL14}}
 	\caption{Кривая бифуркации вилка}
 \end{figure}
+
+\section{Система Шимицу-Мориока}
+Рассмотрим систему:
+\begin{equation*}
+	\begin{cases}
+		x' = y \\
+		y' = x - ay - xz \\
+		z' = -bz + x^2
+	\end{cases}
+\end{equation*}
+$a > 0$ и $b > 0$ - параметры.
+\newline
+Протянем бифуркацию Андронова-Хопфа. Для этого выберем точку в окрестности нуля и параметры $(a, b) = (1.5; 0.38)$. Находим состояние равновесия, выбираем найденную точку и протягиваем её по параметру $a$ как $equilibrium$. Находим точку $Hopf$ и протягиваем её по двум параметрам.
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{SMHopf}}
+	\caption{Кривая бифуркации Андронова-Хопфа}
+\end{figure}
+Построим кривую бифуркации $HB$. Выберем точку в окрестности нуля и параметры $(a, b) = (1.225; 0.38)$. Простроим кривую, выбрав параметр $interval$ равным 25. Далее выберем начальную точку как состояние равновесия: $\textbf{Type|Initial Point|Equilibrium}$, а кривую - $\textbf{Type|Curve|ConnectionSaddle}$. Нажмём $\textbf{Compute|Forward}$ и затем в Data Browser выберем HTHom Select Connection. После этого выбираем в Starter параметры (a, SParam1, eps1) и зануляем параметр SParam1. В Data Browser выбираем HTHom SParam1 equal to zero. Теперь выберем параметры (a, eps1, T) и будем занулять eps1. Выбираем в Data Browser HTHom eps1 small enough, а в initializer - Homoclinic to Saddle. Выбираем параметры (a, b, T) и начинаем строить кривую бифуркации $HB$.
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{SMHB}}
+	\caption{Кривая бифуркации HB}
+\end{figure}
+
+Найдём нейтральное седло путём выбора нулевой точки как $Equilibrium$. Протянем её по параметру $b$. Наткнёмся на точку $Neutral-Saddle$ $equilibrium$, выберем её и протянем по двум параметрам.
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{SMNS}}
+	\caption{Кривая нейтрального седла}
+\end{figure}
+
+Вытянем кривую седло-узловой бифуркации из точки $Generalized$ $Hopf$. Выберем её и выберем тип кривой $limit$ $point$ $of$ $cycles$.
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{SMSaddleNode}}
+	\caption{Кривая седло-узловой бифуркации}
+\end{figure}
+
+Выберем точку в окрестности нуля и параметры $(a, b) = (0.62, 0.4)$. Проделаем те же действия, что и с кривой $HB$.
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{ShimitsuMarioca1}}
+	\caption{Кривая HB-2}
+\end{figure}
+
 \end{document}
