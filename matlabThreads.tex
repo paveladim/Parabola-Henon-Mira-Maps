@@ -148,4 +148,113 @@ $a > 0$ и $b > 0$ - параметры.
 	\caption{Кривая HB-2}
 \end{figure}
 
+\section{Система Рёсслера}
+
+Рассмотрим систему вида:
+\begin{equation*}
+	\begin{cases}
+		\dot x = - y - z \\
+		\dot y = x + a  y \\
+		\dot z = b  x + z  (x - c)
+	\end{cases}
+\end{equation*}
+
+Приравняв правые части нулю, получим систему:
+\begin{equation*}
+	\begin{cases}
+		y = -z \\
+		x = -ay = az \\
+		abz + z(az - c) = 0
+	\end{cases}
+\end{equation*}
+
+Из которой легко извлечь, что состояниями равновесия являются $O_1 = (0, 0, 0)$ и $O_2 = (c - ab; \frac{ab - c}{a}; \frac{c - ab}{a})$.
+
+Построим области устойчивости, вычислив характеристический многочлен линеаризованных в окрестности данных состояний равновесия систем и получив условия на коэффициенты с помощью следствия из критерия Рауса-Гурвица.
+
+Для $O_1$ характеристический многочлен имеет вид:
+$ \lambda^3 - (a - c)\lambda^2 - (ac - 1.3)\lambda - 0.3a + c = 0 $
+и область устойчивости:
+\begin{equation*}
+	\begin{cases}
+		a - c < 0 \\
+		ac - 1.3 < 0 \\
+		c - 0.3 a > 0 \\
+		(a - c)(ac - 1.3) > c - 0.3 a
+	\end{cases}
+\end{equation*}
+
+Для $O_2$ характеристический многочлен имеет вид:
+$ \lambda^3 + 0.7 a \lambda^2 + (0.3a^2 - \frac{c}{a} - 1)\lambda - 0.3a + c = 0 $
+и область устойчивости:
+\begin{equation*}
+	\begin{cases}
+		a > 0 \\
+		0.3a^2 - \frac{c}{a} - 1 > 0 \\
+		c - 0.3 a > 0 \\
+		0.7a(0.3a^2 - \frac{c}{a} - 1) > c - 0.3 a
+	\end{cases}
+\end{equation*}
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{ZeroEQSTRoessler}}
+	\caption{Область устойчивости нулевого состояния равновесия}
+\end{figure}
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{NonZeroEQSTRoessler}}
+	\caption{Область устойчивость ненулевого состояния равновесия}
+\end{figure}
+
+Найдём бифуркационные кривые, отвечающие бифуркации Андронова-Хопфа. Для этого выберем точку в окрестности нуля, подберём параметры так, чтобы ноль был устойчив. Найдём устойчивое состояние равновесия и с помощью протягивания параметра $a$ будем искать точки бифуркаций. Далее выбираем эти точки и протягиваем их уже по двум параметрам $a$ и $c$.
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{RosslerHopf}}
+	\caption{Кривые бифуркаций Андронова-Хопфа}
+\end{figure}
+
+Проследим за эволюцией аттрактора в системе. Для этого зафиксируем параметры $b = 0.3$ и $c = 4.9$, изменять будем $a$.
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{RosAtr1}}
+	\caption{$a = 0.08$}
+\end{figure}
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{RosAtr2}}
+	\caption{$a = 0.25$}
+\end{figure}
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{RosAtr3}}
+	\caption{$a = 0.275$}
+\end{figure}
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{RosAtr4}}
+	\caption{$a = 0.28$}
+\end{figure}
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{RosAtr5}}
+	\caption{$a = 0.3$}
+\end{figure}
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{RosAtr6}}
+	\caption{$a = 0.35$}
+\end{figure}
+
+Найдём в Матконте кривые гомоклинических бифуркаций h1 и h2. Для кривой h1 выберем параметры $(a, b, c) = (0.35, 0.3, 4.88573)$, а для h2 - $(a, b, c) = (0.47, 0.3, 4)$, параметр $interval = 5$. И повторим ту же процедуру, что была проделана для отыскания кривой гомоклинической бифуркации в системе Лоренца.
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{RosslerH1}}
+	\caption{Кривая h1}
+\end{figure}
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{RosslerH2}}
+	\caption{Кривая h2}
+\end{figure}
+
 \end{document}
