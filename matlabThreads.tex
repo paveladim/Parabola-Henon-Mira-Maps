@@ -257,4 +257,21 @@ $ \lambda^3 + 0.7 a \lambda^2 + (0.3a^2 - \frac{c}{a} - 1)\lambda - 0.3a + c = 0
 	\caption{Кривая h2}
 \end{figure}
 
+Построим окно устойчивости $S_1$. Для этого при параметрах $(a, b, c) = (0.3 0.3 0.73)$ ищем цикл. Сначала строим траекторию при $intervals = 80$, затем выбираем конечную точку на траектории и считаем от неё при $intervals = 20$. После просчёта траектории выбираем её как $limit$ $cycle$ и поочерёдно протягиваем по параметрам $(a, T)$, $(c, T)$, $(a, c)$, чтобы отыскать нужные нам точки, например, Limit point of cycle или Period Doubling. Выбирая их и протягивая по параметрам $(a, c)$, получаем нужные нам кривые.
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.6]{cycle}}
+	\caption{Процесс отыскания нужных нам кривых}
+\end{figure}
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.25]{RosS1}}
+	\caption{Окно устойчивости S1}
+\end{figure}
+
+\begin{figure}[H]
+	\center{\includegraphics[scale=0.8]{RosS1PLUS}}
+	\caption{Окно устойчивости S1 в масштабе}
+\end{figure}
+
 \end{document}
